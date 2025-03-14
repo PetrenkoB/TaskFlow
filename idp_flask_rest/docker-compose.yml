@@ -2,6 +2,7 @@ version: '3.8'
 
 services:
   api:
+    container_name: api
     build: .
     ports:
       - "5000:5000"
@@ -15,6 +16,7 @@ services:
     restart: always
 
   db:
+    container_name: db
     image: postgres:14
     volumes:
       - postgres_data:/var/lib/postgresql/data/

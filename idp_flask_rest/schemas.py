@@ -28,7 +28,7 @@ class ProjectSchema(Schema):
     deadline = fields.Date(allow_none=True)
     created_at = fields.DateTime(dump_only=True)
     updated_at = fields.DateTime(dump_only=True)
-    owner_id = fields.Integer(dump_only=True)
+    owner_id = fields.Integer()
     owner = fields.Nested(lambda: UserSchema(only=('id', 'username')), dump_only=True)
     task_count = fields.Method("get_task_count", dump_only=True)
     
